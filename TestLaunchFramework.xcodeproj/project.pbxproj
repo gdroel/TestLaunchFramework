@@ -10,6 +10,7 @@
 		E702C0352613A13100E5AA4F /* TestLaunchFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E702C02B2613A13000E5AA4F /* TestLaunchFramework.framework */; };
 		E702C03A2613A13100E5AA4F /* TestLaunchFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0392613A13100E5AA4F /* TestLaunchFrameworkTests.m */; };
 		E702C03C2613A13100E5AA4F /* TestLaunchFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C02E2613A13000E5AA4F /* TestLaunchFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E702C0482613A40500E5AA4F /* TestLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0472613A40500E5AA4F /* TestLaunchManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,8 @@
 		E702C0342613A13100E5AA4F /* TestLaunchFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TestLaunchFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E702C0392613A13100E5AA4F /* TestLaunchFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchFrameworkTests.m; sourceTree = "<group>"; };
 		E702C03B2613A13100E5AA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E702C0472613A40500E5AA4F /* TestLaunchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchManager.m; sourceTree = "<group>"; };
+		E702C04B2613A41E00E5AA4F /* TestLaunchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchManager.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 			children = (
 				E702C02E2613A13000E5AA4F /* TestLaunchFramework.h */,
 				E702C02F2613A13000E5AA4F /* Info.plist */,
+				E702C0472613A40500E5AA4F /* TestLaunchManager.m */,
+				E702C04B2613A41E00E5AA4F /* TestLaunchManager.h */,
 			);
 			path = TestLaunchFramework;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E702C0482613A40500E5AA4F /* TestLaunchManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
