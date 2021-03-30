@@ -5,7 +5,7 @@
 //  Created by Gabe Roeloffs on 3/30/21.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "TestLaunchManager.h"
 
 @implementation TestLaunchManager : NSObject
@@ -20,7 +20,7 @@
 }
 
 - (void) doSomething {
-    NSLog(@"hello there");
+    NSLog(@"Hello from my framework");
 }
 
 @end
