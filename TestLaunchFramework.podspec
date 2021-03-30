@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "TestLaunchFramework"
   spec.version      = "0.0.1"
-  spec.summary      = ""
+  spec.summary      = "Supercharge your UI Testing Flows"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,6 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+                    - Quickly create UI Tests
                    DESC
 
   spec.homepage     = "https://github.com/gdroel/TestLaunchFramework"
@@ -38,8 +39,7 @@ Pod::Spec.new do |spec|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  spec.license      = "MIT (example)"
-  # spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license = { :type => "MIT", :file => "LICENSE" }
 
 
   # ――― Author Metadata  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -52,7 +52,7 @@ Pod::Spec.new do |spec|
   #  profile URL.
   #
 
-  spec.author             = { "Gabe Roeloffs" => "email@address.com" }
+  spec.author             = { "Gabe Roeloffs" => "gabe@gaberoeloffs.com" }
   # Or just: spec.author    = "Gabe Roeloffs"
   # spec.authors            = { "Gabe Roeloffs" => "email@address.com" }
   # spec.social_media_url   = "https://twitter.com/Gabe Roeloffs"
@@ -63,8 +63,7 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # spec.platform     = :ios
-  # spec.platform     = :ios, "5.0"
+  spec.platform     = :ios, "14.0"
 
   #  When using multiple platforms
   # spec.ios.deployment_target = "5.0"
@@ -79,7 +78,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "https://github.com/gdroel/TestLaunchFramework.git", :commit => "a39b658dde54bbebd1f4a5c8a907692626cb4876" }
+  spec.source       = { :git => "https://github.com/gdroel/TestLaunchFramework.git" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
