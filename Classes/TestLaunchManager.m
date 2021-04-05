@@ -45,7 +45,7 @@
 - (TestLaunchWindow *) explorerWindow {
     if (NULL == _explorerWindow) {
         _explorerWindow = [[TestLaunchWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-        // _explorerWindow.rootViewController = self.explorerViewController;
+        _explorerWindow.rootViewController = self.explorerViewController;
     }
     
     return _explorerWindow;
