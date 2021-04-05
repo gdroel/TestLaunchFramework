@@ -14,6 +14,7 @@
 
 // Public methods
 - (void) doSomething;
+- (void) showExplorer;
 
 @end
 #endif /* TestLaunchManager_h */

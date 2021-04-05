@@ -11,6 +11,10 @@
 		E702C03A2613A13100E5AA4F /* TestLaunchFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0392613A13100E5AA4F /* TestLaunchFrameworkTests.m */; };
 		E702C03C2613A13100E5AA4F /* TestLaunchFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C02E2613A13000E5AA4F /* TestLaunchFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E702C0482613A40500E5AA4F /* TestLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0472613A40500E5AA4F /* TestLaunchManager.m */; };
+		E702C0B5261BA48B00E5AA4F /* TestLaunchWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C0B3261BA48B00E5AA4F /* TestLaunchWindow.h */; };
+		E702C0B6261BA48B00E5AA4F /* TestLaunchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0B4261BA48B00E5AA4F /* TestLaunchWindow.m */; };
+		E702C0BB261BA94B00E5AA4F /* TestLaunchExplorerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C0B9261BA94B00E5AA4F /* TestLaunchExplorerViewController.h */; };
+		E702C0BC261BA94B00E5AA4F /* TestLaunchExplorerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0BA261BA94B00E5AA4F /* TestLaunchExplorerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,10 @@
 		E702C03B2613A13100E5AA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E702C0472613A40500E5AA4F /* TestLaunchManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchManager.m; sourceTree = "<group>"; };
 		E702C04B2613A41E00E5AA4F /* TestLaunchManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchManager.h; sourceTree = "<group>"; };
+		E702C0B3261BA48B00E5AA4F /* TestLaunchWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchWindow.h; sourceTree = "<group>"; };
+		E702C0B4261BA48B00E5AA4F /* TestLaunchWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchWindow.m; sourceTree = "<group>"; };
+		E702C0B9261BA94B00E5AA4F /* TestLaunchExplorerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchExplorerViewController.h; sourceTree = "<group>"; };
+		E702C0BA261BA94B00E5AA4F /* TestLaunchExplorerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchExplorerViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,10 @@
 				E702C02F2613A13000E5AA4F /* Info.plist */,
 				E702C0472613A40500E5AA4F /* TestLaunchManager.m */,
 				E702C04B2613A41E00E5AA4F /* TestLaunchManager.h */,
+				E702C0B3261BA48B00E5AA4F /* TestLaunchWindow.h */,
+				E702C0B4261BA48B00E5AA4F /* TestLaunchWindow.m */,
+				E702C0B9261BA94B00E5AA4F /* TestLaunchExplorerViewController.h */,
+				E702C0BA261BA94B00E5AA4F /* TestLaunchExplorerViewController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -98,7 +110,9 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E702C0BB261BA94B00E5AA4F /* TestLaunchExplorerViewController.h in Headers */,
 				E702C03C2613A13100E5AA4F /* TestLaunchFramework.h in Headers */,
+				E702C0B5261BA48B00E5AA4F /* TestLaunchWindow.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E702C0B6261BA48B00E5AA4F /* TestLaunchWindow.m in Sources */,
+				E702C0BC261BA94B00E5AA4F /* TestLaunchExplorerViewController.m in Sources */,
 				E702C0482613A40500E5AA4F /* TestLaunchManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
