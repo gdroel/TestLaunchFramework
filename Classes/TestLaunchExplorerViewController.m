@@ -9,6 +9,8 @@
 
 @interface TestLaunchExplorerViewController ()
 
+@property (nonatomic) UIButton *recordButton;
+
 @end
 
 @implementation TestLaunchExplorerViewController
@@ -18,25 +20,41 @@
     
     self.view.backgroundColor = [UIColor clearColor];
 
-    UIButton *recordButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
-    recordButton.backgroundColor = [UIColor greenColor];
+    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
+    _recordButton.backgroundColor = [UIColor greenColor];
     
-    [recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:recordButton];
+    [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_recordButton];
 }
 
 - (void)recordButtonTapped:(UIButton*)sender {
     NSLog(@"record button tapped");
 }
 
-/*
-#pragma mark - Navigation
+/* Handles touches */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (BOOL)shouldReceiveTouchAtWindowPoint:(CGPoint)pointInWindowCoordinates {
+    BOOL shouldReceiveTouch = NO;
+    
+    CGPoint pointInLocalCoordinates = [self.view convertPoint:pointInWindowCoordinates fromView:nil];
+    
+    // Always if it's on the toolbar
+//    if (CGRectContainsPoint(self.explorerToolbar.frame, pointInLocalCoordinates)) {
+//        shouldReceiveTouch = YES;
+//    }
+    
+    // Always if it's on the toolbar
+    if (CGRectContainsPoint(self.recordButton.frame, pointInLocalCoordinates)) {
+        shouldReceiveTouch = YES;
+    }
+    
+//    // Always if we're in selection mode
+//    if (!shouldReceiveTouch && self.currentMode == FLEXExplorerModeSelect) {
+//        shouldReceiveTouch = YES;
+//    }
+    
+    return shouldReceiveTouch;
 }
-*/
+
 
 @end

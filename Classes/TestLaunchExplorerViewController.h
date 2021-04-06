@@ -11,6 +11,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TestLaunchExplorerViewController : UIViewController
 
+- (BOOL)shouldReceiveTouchAtWindowPoint:(CGPoint)pointInWindowCoordinates;
+
 @end
 
 NS_ASSUME_NONNULL_END

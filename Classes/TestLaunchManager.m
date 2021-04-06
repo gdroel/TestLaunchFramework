@@ -10,7 +10,7 @@
 #import "TestLaunchWindow.h"
 #import "TestLaunchExplorerViewController.h"
 
-@interface TestLaunchManager ()
+@interface TestLaunchManager () <TestLaunchWindowEventDelegate>
 
 @property (nonatomic) TestLaunchWindow *explorerWindow;
 @property (nonatomic) TestLaunchExplorerViewController *explorerViewController;
@@ -46,6 +46,7 @@
     if (NULL == _explorerWindow) {
         _explorerWindow = [[TestLaunchWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
         _explorerWindow.rootViewController = self.explorerViewController;
+        _explorerWindow.eventDelegate = self;
     }
     
     return _explorerWindow;
@@ -59,5 +60,20 @@
 
     return _explorerViewController;
 }
+
+#pragma mark - TestLaunchWindowEventDelegate
+
+- (BOOL)shouldHandleTouchAtPoint:(CGPoint)pointInWindow {
+    // Ask the explorer view controller
+    return [self.explorerViewController shouldReceiveTouchAtWindowPoint:pointInWindow];
+}
+
+- (BOOL)canBecomeKeyWindow {
+    // Only when the explorer view controller wants it because
+    // it needs to accept key input & affect the status bar.
+    // return self.explorerViewController.wantsWindowToBecomeKey;
+    return YES;
+}
+
 
 @end

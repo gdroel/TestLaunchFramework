@@ -20,6 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id <TestLaunchWindowEventDelegate> eventDelegate;
 
+// Need to keep track of the previous key window for modal behavior
+@property (nonatomic, readonly) UIWindow *previousKeyWindow;
+
 @end
 
 NS_ASSUME_NONNULL_END

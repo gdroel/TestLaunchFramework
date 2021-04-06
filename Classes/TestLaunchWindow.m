@@ -6,6 +6,7 @@
 //
 
 #import "TestLaunchWindow.h"
+#import "TestLaunchUtility.h"
 #import <objc/runtime.h>
 
 @implementation TestLaunchWindow
@@ -35,19 +36,19 @@
     return [self isKeyWindow];
 }
 
-//- (BOOL)canBecomeKeyWindow {
-//    return [self.eventDelegate canBecomeKeyWindow];
-//}
-//
-//- (void)makeKeyWindow {
-//    _previousKeyWindow = FLEXUtility.appKeyWindow;
-//    [super makeKeyWindow];
-//}
-//
-//- (void)resignKeyWindow {
-//    [super resignKeyWindow];
-//    _previousKeyWindow = nil;
-//}
+- (BOOL)canBecomeKeyWindow {
+    return [self.eventDelegate canBecomeKeyWindow];
+}
+
+- (void)makeKeyWindow {
+    _previousKeyWindow = TestLaunchUtility.appKeyWindow;
+    [super makeKeyWindow];
+}
+
+- (void)resignKeyWindow {
+    [super resignKeyWindow];
+    _previousKeyWindow = nil;
+}
 
 + (void)initialize {
     // This adds a method (superclass override) at runtime which gives us the status bar behavior we want.
