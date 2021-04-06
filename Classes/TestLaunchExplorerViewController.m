@@ -18,7 +18,15 @@
     
     self.view.backgroundColor = [UIColor clearColor];
 
-    // Do any additional setup after loading the view.
+    UIButton *recordButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
+    recordButton.backgroundColor = [UIColor greenColor];
+    
+    [recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:recordButton];
+}
+
+- (void)recordButtonTapped:(UIButton*)sender {
+    NSLog(@"record button tapped");
 }
 
 /*
