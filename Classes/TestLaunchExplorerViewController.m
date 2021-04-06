@@ -67,7 +67,9 @@
 //        shouldReceiveTouch = YES;
 //    }
     
-    return shouldReceiveTouch;
+    return YES;
+    
+//    return shouldReceiveTouch;
 }
 
 // This is the bread and butter of view introspection
