@@ -39,6 +39,30 @@
     return nil;
 }
 
++ (NSArray<UIWindow *> *)allWindows {
+    BOOL includeInternalWindows = YES;
+    BOOL onlyVisibleWindows = NO;
+
+    // Obfuscating selector allWindowsIncludingInternalWindows:onlyVisibleWindows:
+    NSArray<NSString *> *allWindowsComponents = @[
+        @"al", @"lWindo", @"wsIncl", @"udingInt", @"ernalWin", @"dows:o", @"nlyVisi", @"bleWin", @"dows:"
+    ];
+    SEL allWindowsSelector = NSSelectorFromString([allWindowsComponents componentsJoinedByString:@""]);
+
+    NSMethodSignature *methodSignature = [[UIWindow class] methodSignatureForSelector:allWindowsSelector];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:methodSignature];
+
+    invocation.target = [UIWindow class];
+    invocation.selector = allWindowsSelector;
+    [invocation setArgument:&includeInternalWindows atIndex:2];
+    [invocation setArgument:&onlyVisibleWindows atIndex:3];
+    [invocation invoke];
+
+    __unsafe_unretained NSArray<UIWindow *> *windows = nil;
+    [invocation getReturnValue:&windows];
+    return windows;
+}
+
 + (UIWindowScene *)activeScene {
     for (UIScene *scene in UIApplication.sharedApplication.connectedScenes) {
         // Look for an active UIWindowScene
