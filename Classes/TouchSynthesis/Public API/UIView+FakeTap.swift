@@ -8,7 +8,7 @@
 
 import UIKit
 
-public extension UIView {
+@objc public extension UIView {
     
     // All the public methods are going here,
     // so that the dispatch(...) mehtod can change its surface nimbly
@@ -25,7 +25,7 @@ public extension UIView {
     ///
     /// - Throws: `UITouch.Error.noWindow` if the view has no window.
     
-    @objc public func tap(at location: UITouch.Location, bypassSubviews: Bool = false) throws {
+    @objc func tap(at location: UITouch.Location, bypassSubviews: Bool = false) throws {
         try UITouch.dispatch(to: self, at: location, bypassSubviews: bypassSubviews)
     }
     
