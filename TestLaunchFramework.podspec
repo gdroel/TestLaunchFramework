@@ -93,7 +93,7 @@ Pod::Spec.new do |spec|
   spec.exclude_files = "Classes/Exclude"
 
 
-  spec.pod_target_xcconfig = { "DEFINES_MODULE" => "YES" }
+  spec.pod_target_xcconfig = { "CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES" => "YES" }
 
   # spec.public_header_files = "Classes/**/*.h"
 
