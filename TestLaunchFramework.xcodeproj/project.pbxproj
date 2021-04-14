@@ -15,14 +15,6 @@
 		E702C0B6261BA48B00E5AA4F /* TestLaunchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0B4261BA48B00E5AA4F /* TestLaunchWindow.m */; };
 		E702C0BB261BA94B00E5AA4F /* TestLaunchExplorerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C0B9261BA94B00E5AA4F /* TestLaunchExplorerViewController.h */; };
 		E702C0BC261BA94B00E5AA4F /* TestLaunchExplorerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0BA261BA94B00E5AA4F /* TestLaunchExplorerViewController.m */; };
-		E7093A2B26267A6400261F9C /* PublicEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2026267A6400261F9C /* PublicEvent.swift */; };
-		E7093A2C26267A6400261F9C /* UITouch+Synthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2126267A6400261F9C /* UITouch+Synthesis.swift */; };
-		E7093A2D26267A6400261F9C /* NSObject+KVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2226267A6400261F9C /* NSObject+KVC.swift */; };
-		E7093A2E26267A6400261F9C /* UIEvent+Synthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2326267A6400261F9C /* UIEvent+Synthesis.swift */; };
-		E7093A2F26267A6400261F9C /* GSEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2426267A6400261F9C /* GSEvent.swift */; };
-		E7093A3126267A6400261F9C /* UIView+FakeTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2726267A6400261F9C /* UIView+FakeTap.swift */; };
-		E7093A3226267A6400261F9C /* UITouch+Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2826267A6400261F9C /* UITouch+Location.swift */; };
-		E7093A3426267A6400261F9C /* CGRect+RandomPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7093A2A26267A6400261F9C /* CGRect+RandomPoint.swift */; };
 		E7093A4126269F9100261F9C /* TestLaunchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C04B2613A41E00E5AA4F /* TestLaunchManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7E235CD261BE0C800257BFA /* TestLaunchUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */; };
 		E7E235CE261BE0C800257BFA /* TestLaunchUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */; };
@@ -51,14 +43,6 @@
 		E702C0B4261BA48B00E5AA4F /* TestLaunchWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchWindow.m; sourceTree = "<group>"; };
 		E702C0B9261BA94B00E5AA4F /* TestLaunchExplorerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchExplorerViewController.h; sourceTree = "<group>"; };
 		E702C0BA261BA94B00E5AA4F /* TestLaunchExplorerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchExplorerViewController.m; sourceTree = "<group>"; };
-		E7093A2026267A6400261F9C /* PublicEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicEvent.swift; sourceTree = "<group>"; };
-		E7093A2126267A6400261F9C /* UITouch+Synthesis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITouch+Synthesis.swift"; sourceTree = "<group>"; };
-		E7093A2226267A6400261F9C /* NSObject+KVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+KVC.swift"; sourceTree = "<group>"; };
-		E7093A2326267A6400261F9C /* UIEvent+Synthesis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEvent+Synthesis.swift"; sourceTree = "<group>"; };
-		E7093A2426267A6400261F9C /* GSEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GSEvent.swift; sourceTree = "<group>"; };
-		E7093A2726267A6400261F9C /* UIView+FakeTap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+FakeTap.swift"; sourceTree = "<group>"; };
-		E7093A2826267A6400261F9C /* UITouch+Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITouch+Location.swift"; sourceTree = "<group>"; };
-		E7093A2A26267A6400261F9C /* CGRect+RandomPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+RandomPoint.swift"; sourceTree = "<group>"; };
 		E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchUtility.h; sourceTree = "<group>"; };
 		E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +87,6 @@
 		E702C02D2613A13000E5AA4F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				E7093A1E26267A6400261F9C /* TouchSynthesis */,
 				E702C02E2613A13000E5AA4F /* TestLaunchFramework.h */,
 				E702C02F2613A13000E5AA4F /* Info.plist */,
 				E702C0472613A40500E5AA4F /* TestLaunchManager.m */,
@@ -125,37 +108,6 @@
 				E702C03B2613A13100E5AA4F /* Info.plist */,
 			);
 			path = TestLaunchFrameworkTests;
-			sourceTree = "<group>";
-		};
-		E7093A1E26267A6400261F9C /* TouchSynthesis */ = {
-			isa = PBXGroup;
-			children = (
-				E7093A1F26267A6400261F9C /* Implementation Details */,
-				E7093A2626267A6400261F9C /* Public API */,
-			);
-			path = TouchSynthesis;
-			sourceTree = "<group>";
-		};
-		E7093A1F26267A6400261F9C /* Implementation Details */ = {
-			isa = PBXGroup;
-			children = (
-				E7093A2026267A6400261F9C /* PublicEvent.swift */,
-				E7093A2126267A6400261F9C /* UITouch+Synthesis.swift */,
-				E7093A2226267A6400261F9C /* NSObject+KVC.swift */,
-				E7093A2326267A6400261F9C /* UIEvent+Synthesis.swift */,
-				E7093A2426267A6400261F9C /* GSEvent.swift */,
-			);
-			path = "Implementation Details";
-			sourceTree = "<group>";
-		};
-		E7093A2626267A6400261F9C /* Public API */ = {
-			isa = PBXGroup;
-			children = (
-				E7093A2726267A6400261F9C /* UIView+FakeTap.swift */,
-				E7093A2826267A6400261F9C /* UITouch+Location.swift */,
-				E7093A2A26267A6400261F9C /* CGRect+RandomPoint.swift */,
-			);
-			path = "Public API";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,18 +221,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7093A2F26267A6400261F9C /* GSEvent.swift in Sources */,
 				E702C0B6261BA48B00E5AA4F /* TestLaunchWindow.m in Sources */,
 				E7E235CE261BE0C800257BFA /* TestLaunchUtility.m in Sources */,
-				E7093A2B26267A6400261F9C /* PublicEvent.swift in Sources */,
-				E7093A3226267A6400261F9C /* UITouch+Location.swift in Sources */,
-				E7093A3426267A6400261F9C /* CGRect+RandomPoint.swift in Sources */,
-				E7093A2D26267A6400261F9C /* NSObject+KVC.swift in Sources */,
 				E702C0BC261BA94B00E5AA4F /* TestLaunchExplorerViewController.m in Sources */,
-				E7093A2C26267A6400261F9C /* UITouch+Synthesis.swift in Sources */,
 				E702C0482613A40500E5AA4F /* TestLaunchManager.m in Sources */,
-				E7093A2E26267A6400261F9C /* UIEvent+Synthesis.swift in Sources */,
-				E7093A3126267A6400261F9C /* UIView+FakeTap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +284,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -405,7 +349,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
+				DEFINES_MODULE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -478,7 +422,6 @@
 		E702C0432613A13100E5AA4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XLS3DM87X;
 				INFOPLIST_FILE = TestLaunchFrameworkTests/Info.plist;
@@ -496,7 +439,6 @@
 		E702C0442613A13100E5AA4F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5XLS3DM87X;
 				INFOPLIST_FILE = TestLaunchFrameworkTests/Info.plist;
