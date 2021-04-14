@@ -28,11 +28,11 @@ extension UITouch {
         case .center:
             let viewFrame = view.frame
             coord = CGPoint(x: viewFrame.width/2.0, y: viewFrame.height/2.0)
-        case .point(let pt):
-            coord = pt
-        case .random:
-            let rndPt = view.bounds.randomPoint()
-            coord = rndPt
+//        case .point(let pt):
+//            coord = pt
+//        case .random:
+//            let rndPt = view.bounds.randomPoint()
+//            coord = rndPt
         }
         
         let windowCoord: CGPoint

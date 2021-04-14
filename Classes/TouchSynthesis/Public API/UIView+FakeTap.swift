@@ -25,7 +25,7 @@ public extension UIView {
     ///
     /// - Throws: `UITouch.Error.noWindow` if the view has no window.
     
-    public func tap(at location: UITouch.Location, bypassSubviews: Bool = false) throws {
+    @objc public func tap(at location: UITouch.Location, bypassSubviews: Bool = false) throws {
         try UITouch.dispatch(to: self, at: location, bypassSubviews: bypassSubviews)
     }
     

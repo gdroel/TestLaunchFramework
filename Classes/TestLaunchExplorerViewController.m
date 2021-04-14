@@ -7,6 +7,7 @@
 
 #import "TestLaunchExplorerViewController.h"
 #import "TestLaunchUtility.h"
+#import <TestLaunchFramework/TestLaunchFramework-Swift.h>
 
 @interface TestLaunchExplorerViewController ()
 
@@ -132,6 +133,10 @@
     
     UIView *lastSubview = [self recursiveSubviewsAtPoint:tapPointInWindow inView:windowForSelection skipHiddenViews:YES].lastObject;
     NSLog(@"TestLaunchFramework: Selected view is %@", lastSubview.description);
+    
+    /* We play a trick on the user here, they think they are the ones tapping the view but we programatically do it*/
+    NSError *error;
+    [lastSubview tapAt:LocationCenter bypassSubviews:false error:&error];
     
     // Select the deepest visible view at the tap point. This generally corresponds to what the user wants to select.
     return lastSubview;
