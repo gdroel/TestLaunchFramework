@@ -93,7 +93,7 @@ Pod::Spec.new do |spec|
   spec.exclude_files = "Classes/Exclude"
 
 
-  ss.pod_target_xcconfig = { "DEFINES_MODULE" => "YES" }
+  spec.pod_target_xcconfig = { "DEFINES_MODULE" => "YES" }
 
   # spec.public_header_files = "Classes/**/*.h"
 
