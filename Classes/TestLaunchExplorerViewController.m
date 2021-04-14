@@ -5,6 +5,8 @@
 //  Created by Gabe Roeloffs on 4/5/21.
 //
 
+#define TL_ENABLED NO
+
 #import "TestLaunchExplorerViewController.h"
 #import "TestLaunchUtility.h"
 //#import "TestLaunchFramework-Swift.h"
@@ -49,26 +51,29 @@
 /* Handles touches */
 
 - (BOOL)shouldReceiveTouchAtWindowPoint:(CGPoint)pointInWindowCoordinates {
-    BOOL shouldReceiveTouch = NO;
     
-    CGPoint pointInLocalCoordinates = [self.view convertPoint:pointInWindowCoordinates fromView:nil];
+    return TL_ENABLED;
     
-    // Always if it's on the toolbar
-//    if (CGRectContainsPoint(self.explorerToolbar.frame, pointInLocalCoordinates)) {
+//    BOOL shouldReceiveTouch = NO;
+//
+//    CGPoint pointInLocalCoordinates = [self.view convertPoint:pointInWindowCoordinates fromView:nil];
+//
+//    // Always if it's on the toolbar
+////    if (CGRectContainsPoint(self.explorerToolbar.frame, pointInLocalCoordinates)) {
+////        shouldReceiveTouch = YES;
+////    }
+//
+//    // Always if it's on the toolbar
+//    if (CGRectContainsPoint(self.recordButton.frame, pointInLocalCoordinates)) {
 //        shouldReceiveTouch = YES;
 //    }
-    
-    // Always if it's on the toolbar
-    if (CGRectContainsPoint(self.recordButton.frame, pointInLocalCoordinates)) {
-        shouldReceiveTouch = YES;
-    }
-    
-//    // Always if we're in selection mode
-//    if (!shouldReceiveTouch && self.currentMode == FLEXExplorerModeSelect) {
-//        shouldReceiveTouch = YES;
-//    }
-    
-    return YES;
+//
+////    // Always if we're in selection mode
+////    if (!shouldReceiveTouch && self.currentMode == FLEXExplorerModeSelect) {
+////        shouldReceiveTouch = YES;
+////    }
+//
+//    return YES;
     
 //    return shouldReceiveTouch;
 }
