@@ -29,7 +29,6 @@
         pointInside = [super pointInside:point withEvent:event];
     }
     return pointInside;
-    
 }
 
 - (BOOL)shouldAffectStatusBarAppearance {
