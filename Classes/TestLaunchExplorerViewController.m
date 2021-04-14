@@ -76,6 +76,7 @@
 - (NSArray<UIView *> *)recursiveSubviewsAtPoint:(CGPoint)pointInView
                                          inView:(UIView *)view
                                 skipHiddenViews:(BOOL)skipHidden {
+    
     NSMutableArray<UIView *> *subviewsAtPoint = [NSMutableArray new];
     for (UIView *subview in view.subviews) {
         BOOL isHidden = subview.hidden || subview.alpha < 0.01;
@@ -129,8 +130,11 @@
         }
     }
     
+    UIView *lastSubview = [self recursiveSubviewsAtPoint:tapPointInWindow inView:windowForSelection skipHiddenViews:YES].lastObject;
+    NSLog(@"TestLaunchFramework: Selected view is %@", lastSubview.description);
+    
     // Select the deepest visible view at the tap point. This generally corresponds to what the user wants to select.
-    return [self recursiveSubviewsAtPoint:tapPointInWindow inView:windowForSelection skipHiddenViews:YES].lastObject;
+    return lastSubview;
 }
 
 - (void)handleSelectionTap:(UITapGestureRecognizer *)tapGR {
