@@ -52,7 +52,11 @@
 - (void)onTick:(NSObject *)sender {
 //    NSLog(@"tick");
 //    [_button simulateTap];
-    [[_barItem target] performSelector:_barItem.action];
+    if ([[_barItem class] isSubclassOfClass:[UIButton class]]) {
+        NSLog(@"is a bar button item");
+        UIButton *item = (UIButton *)_barItem;
+        [[_barItem target] performSelector:_barItem.action];
+    }
 }
 
 -(void)tapHit:(UITapGestureRecognizer*)tap {

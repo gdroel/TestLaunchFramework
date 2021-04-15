@@ -138,9 +138,10 @@
     }
     
     UIView *lastSubview = [self recursiveSubviewsAtPoint:tapPointInWindow inView:windowForSelection skipHiddenViews:YES].lastObject;
+    NSLog(@"TestLaunchFramework: Selected view class is %@", [lastSubview class]);
     NSLog(@"TestLaunchFramework: Selected view is %@", lastSubview.description);
     
-    if ([lastSubview isKindOfClass:[UIBarButtonItem class]]) {
+    if ([[lastSubview class] isSubclassOfClass:[UIBarButtonItem class]]) {
         NSLog(@"is a bar button item");
         UIBarButtonItem *item = (UIBarButtonItem *)lastSubview;
         [[item target] performSelector:item.action];
