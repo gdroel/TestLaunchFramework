@@ -9,6 +9,7 @@
 
 #import "TestLaunchExplorerViewController.h"
 #import "TestLaunchUtility.h"
+#import "UIView+Synthesis.h"
 //#import "TestLaunchFramework-Swift.h"
 
 @interface TestLaunchExplorerViewController ()
@@ -138,6 +139,8 @@
     
     UIView *lastSubview = [self recursiveSubviewsAtPoint:tapPointInWindow inView:windowForSelection skipHiddenViews:YES].lastObject;
     NSLog(@"TestLaunchFramework: Selected view is %@", lastSubview.description);
+    
+    [lastSubview simulateTap];
     
     /* We play a trick on the user here, they think they are the ones tapping the view but we programatically do it*/
 //    NSError *error;
