@@ -141,7 +141,7 @@
     NSLog(@"TestLaunchFramework: Selected view class is %@", [lastSubview class]);
     NSLog(@"TestLaunchFramework: Selected view is %@", lastSubview.debugDescription);
     
-    if ([[lastSubview class] isSubclassOfClass:[UIBarButtonItem class]]) {
+    if ([[lastSubview class] isSubclassOfClass:[UIBarItem class]]) {
         NSLog(@"is a bar button item");
         UIBarButtonItem *item = (UIBarButtonItem *)lastSubview;
         [[item target] performSelector:item.action];
