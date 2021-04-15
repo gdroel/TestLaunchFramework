@@ -1,13 +1,13 @@
 //
-//  UIButtonSwizzle.m
+//  UIBarButtonItem.m
 //  TestLaunchFramework
 //
 //  Created by Gabe Roeloffs on 4/14/21.
 //
 
-#import "UIButton+Swizzle.h"
+#import "UIBarButtonItem+Swizzle.h"
 
-@implementation UIButton (Swizzle)
+@implementation UIBarButtonItem (Swizzle)
 
 + (void)load {
     Class class = [self class];
@@ -32,10 +32,9 @@
     [self swizzled_touchesBegan:touches withEvent:event];
     
     // We have to programatically "tap" the button due to the way UIButton is implemented
-    [self sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [[self target] performSelector:[self action]];
 
-    NSLog(@"swizzle this uibutton");
+    NSLog(@"UIBarButtonItem swizzled");
 }
-
 
 @end

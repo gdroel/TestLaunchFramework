@@ -39,6 +39,8 @@
 		E74179902627E1FD0000E876 /* UIButton+ConsumeTouches.m in Sources */ = {isa = PBXBuildFile; fileRef = E741798E2627E1FD0000E876 /* UIButton+ConsumeTouches.m */; };
 		E74179AD2627E8CF0000E876 /* UIButton+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179AB2627E8CF0000E876 /* UIButton+Swizzle.h */; };
 		E74179AE2627E8CF0000E876 /* UIButton+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179AC2627E8CF0000E876 /* UIButton+Swizzle.m */; };
+		E74179CF2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179CD2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h */; };
+		E74179D02627EF4B0000E876 /* UIBarButtonItem+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179CE2627EF4B0000E876 /* UIBarButtonItem+Swizzle.m */; };
 		E7E235CD261BE0C800257BFA /* TestLaunchUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */; };
 		E7E235CE261BE0C800257BFA /* TestLaunchUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */; };
 /* End PBXBuildFile section */
@@ -131,6 +133,8 @@
 		E741798E2627E1FD0000E876 /* UIButton+ConsumeTouches.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ConsumeTouches.m"; sourceTree = "<group>"; };
 		E74179AB2627E8CF0000E876 /* UIButton+Swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Swizzle.h"; sourceTree = "<group>"; };
 		E74179AC2627E8CF0000E876 /* UIButton+Swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Swizzle.m"; sourceTree = "<group>"; };
+		E74179CD2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Swizzle.h"; sourceTree = "<group>"; };
+		E74179CE2627EF4B0000E876 /* UIBarButtonItem+Swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Swizzle.m"; sourceTree = "<group>"; };
 		E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchUtility.h; sourceTree = "<group>"; };
 		E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -243,6 +247,8 @@
 				E741798E2627E1FD0000E876 /* UIButton+ConsumeTouches.m */,
 				E74179AB2627E8CF0000E876 /* UIButton+Swizzle.h */,
 				E74179AC2627E8CF0000E876 /* UIButton+Swizzle.m */,
+				E74179CD2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h */,
+				E74179CE2627EF4B0000E876 /* UIBarButtonItem+Swizzle.m */,
 			);
 			path = TouchSynthesis;
 			sourceTree = "<group>";
@@ -298,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E235CD261BE0C800257BFA /* TestLaunchUtility.h in Headers */,
+				E74179CF2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h in Headers */,
 				E7417929262795060000E876 /* UIEvent+Synthesis.h in Headers */,
 				E7093AF42626DB2B00261F9C /* UITouch+Synthesis.h in Headers */,
 				E741798F2627E1FD0000E876 /* UIButton+ConsumeTouches.h in Headers */,
@@ -500,6 +507,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74179D02627EF4B0000E876 /* UIBarButtonItem+Swizzle.m in Sources */,
 				E702C0B6261BA48B00E5AA4F /* TestLaunchWindow.m in Sources */,
 				E741792A262795060000E876 /* UIEvent+Synthesis.m in Sources */,
 				E7E235CE261BE0C800257BFA /* TestLaunchUtility.m in Sources */,
