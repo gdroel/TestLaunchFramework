@@ -30,11 +30,10 @@
 
 - (void)swizzled_touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [self swizzled_touchesBegan:touches withEvent:event];
-    
+    NSLog(@"UIBarButtonItem swizzled");
+
     // We have to programatically "tap" the button due to the way UIButton is implemented
     [[self target] performSelector:[self action]];
-
-    NSLog(@"UIBarButtonItem swizzled");
 }
 
 @end

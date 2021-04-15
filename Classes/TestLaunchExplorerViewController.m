@@ -140,7 +140,13 @@
     UIView *lastSubview = [self recursiveSubviewsAtPoint:tapPointInWindow inView:windowForSelection skipHiddenViews:YES].lastObject;
     NSLog(@"TestLaunchFramework: Selected view is %@", lastSubview.description);
     
-    [lastSubview simulateTap];
+    if ([lastSubview isKindOfClass:[UIBarButtonItem class]]) {
+        NSLog(@"is a bar button item");
+        UIBarButtonItem *item = (UIBarButtonItem *)lastSubview;
+        [[item target] performSelector:item.action];
+    } else {
+        [lastSubview simulateTap];
+    }
     
     /* We play a trick on the user here, they think they are the ones tapping the view but we programatically do it*/
 //    NSError *error;

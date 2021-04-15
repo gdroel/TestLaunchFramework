@@ -13,6 +13,7 @@
 
 @property UIButton *button;
 @property CustomView *customView;
+@property UIBarButtonItem *barItem;
 
 @end
 
@@ -25,6 +26,9 @@
     _button.backgroundColor = [UIColor redColor];
     [_button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_button];
+
+    _barItem = [[UIBarButtonItem alloc] initWithTitle:@"hello" style:UIBarButtonItemStylePlain target:self action:@selector(barButtonTapped)];
+    [[self navigationItem] setRightBarButtonItem:_barItem];
     
 //     _customView = [[CustomView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    _customView.backgroundColor = [UIColor redColor];
@@ -41,9 +45,14 @@
 //    [self.view addSubview:invisibleView];
 }
 
+- (void)barButtonTapped {
+    NSLog(@"bar button tapped");
+}
+
 - (void)onTick:(NSObject *)sender {
 //    NSLog(@"tick");
-    [_button simulateTap];
+//    [_button simulateTap];
+    [[_barItem target] performSelector:_barItem.action];
 }
 
 -(void)tapHit:(UITapGestureRecognizer*)tap {
