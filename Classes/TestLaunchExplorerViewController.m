@@ -5,7 +5,7 @@
 //  Created by Gabe Roeloffs on 4/5/21.
 //
 
-#define TL_ENABLED NO
+#define TL_ENABLED YES
 
 #import "TestLaunchExplorerViewController.h"
 #import "TestLaunchUtility.h"
