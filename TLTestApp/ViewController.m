@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "TestLaunchFramework.h"
 #import "UIView+Synthesis.h"
 #import "CustomView.h"
 
@@ -29,6 +30,9 @@
 
     _barItem = [[UIBarButtonItem alloc] initWithTitle:@"hello" style:UIBarButtonItemStylePlain target:self action:@selector(barButtonTapped)];
     [[self navigationItem] setRightBarButtonItem:_barItem];
+    
+    [[TestLaunchManager sharedManager] showExplorer];
+
     
 //     _customView = [[CustomView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
 //    _customView.backgroundColor = [UIColor redColor];

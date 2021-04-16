@@ -11,16 +11,16 @@
 		E702C03A2613A13100E5AA4F /* TestLaunchFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0392613A13100E5AA4F /* TestLaunchFrameworkTests.m */; };
 		E702C03C2613A13100E5AA4F /* TestLaunchFramework.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C02E2613A13000E5AA4F /* TestLaunchFramework.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E702C0482613A40500E5AA4F /* TestLaunchManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0472613A40500E5AA4F /* TestLaunchManager.m */; };
-		E702C0B5261BA48B00E5AA4F /* TestLaunchWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C0B3261BA48B00E5AA4F /* TestLaunchWindow.h */; };
+		E702C0B5261BA48B00E5AA4F /* TestLaunchWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C0B3261BA48B00E5AA4F /* TestLaunchWindow.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E702C0B6261BA48B00E5AA4F /* TestLaunchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0B4261BA48B00E5AA4F /* TestLaunchWindow.m */; };
-		E702C0BB261BA94B00E5AA4F /* TestLaunchExplorerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C0B9261BA94B00E5AA4F /* TestLaunchExplorerViewController.h */; };
+		E702C0BB261BA94B00E5AA4F /* TestLaunchExplorerViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C0B9261BA94B00E5AA4F /* TestLaunchExplorerViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E702C0BC261BA94B00E5AA4F /* TestLaunchExplorerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E702C0BA261BA94B00E5AA4F /* TestLaunchExplorerViewController.m */; };
 		E7093A4126269F9100261F9C /* TestLaunchManager.h in Headers */ = {isa = PBXBuildFile; fileRef = E702C04B2613A41E00E5AA4F /* TestLaunchManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E7093AF42626DB2B00261F9C /* UITouch+Synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = E7093AF22626DB2A00261F9C /* UITouch+Synthesis.h */; };
+		E7093AF42626DB2B00261F9C /* UITouch+Synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = E7093AF22626DB2A00261F9C /* UITouch+Synthesis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7093AF52626DB2B00261F9C /* UITouch+Synthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = E7093AF32626DB2A00261F9C /* UITouch+Synthesis.m */; };
-		E7417929262795060000E876 /* UIEvent+Synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = E7417927262795060000E876 /* UIEvent+Synthesis.h */; };
+		E7417929262795060000E876 /* UIEvent+Synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = E7417927262795060000E876 /* UIEvent+Synthesis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E741792A262795060000E876 /* UIEvent+Synthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = E7417928262795060000E876 /* UIEvent+Synthesis.m */; };
-		E741792F2627A1AD0000E876 /* UIView+Synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = E741792D2627A1AD0000E876 /* UIView+Synthesis.h */; };
+		E741792F2627A1AD0000E876 /* UIView+Synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = E741792D2627A1AD0000E876 /* UIView+Synthesis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E74179302627A1AD0000E876 /* UIView+Synthesis.m in Sources */ = {isa = PBXBuildFile; fileRef = E741792E2627A1AD0000E876 /* UIView+Synthesis.m */; };
 		E74179412627A61B0000E876 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179402627A61B0000E876 /* AppDelegate.m */; };
 		E74179442627A61B0000E876 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179432627A61B0000E876 /* SceneDelegate.m */; };
@@ -33,15 +33,15 @@
 		E74179672627A61B0000E876 /* TLTestAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179662627A61B0000E876 /* TLTestAppUITests.m */; };
 		E74179782627A9600000E876 /* TestLaunchFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E702C02B2613A13000E5AA4F /* TestLaunchFramework.framework */; };
 		E74179792627A9600000E876 /* TestLaunchFramework.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E702C02B2613A13000E5AA4F /* TestLaunchFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		E74179872627E0140000E876 /* CustomView.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179852627E0140000E876 /* CustomView.h */; };
+		E74179872627E0140000E876 /* CustomView.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179852627E0140000E876 /* CustomView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E74179882627E0140000E876 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179862627E0140000E876 /* CustomView.m */; };
-		E741798F2627E1FD0000E876 /* UIButton+ConsumeTouches.h in Headers */ = {isa = PBXBuildFile; fileRef = E741798D2627E1FD0000E876 /* UIButton+ConsumeTouches.h */; };
+		E741798F2627E1FD0000E876 /* UIButton+ConsumeTouches.h in Headers */ = {isa = PBXBuildFile; fileRef = E741798D2627E1FD0000E876 /* UIButton+ConsumeTouches.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E74179902627E1FD0000E876 /* UIButton+ConsumeTouches.m in Sources */ = {isa = PBXBuildFile; fileRef = E741798E2627E1FD0000E876 /* UIButton+ConsumeTouches.m */; };
-		E74179AD2627E8CF0000E876 /* UIButton+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179AB2627E8CF0000E876 /* UIButton+Swizzle.h */; };
+		E74179AD2627E8CF0000E876 /* UIButton+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179AB2627E8CF0000E876 /* UIButton+Swizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E74179AE2627E8CF0000E876 /* UIButton+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179AC2627E8CF0000E876 /* UIButton+Swizzle.m */; };
-		E74179CF2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179CD2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h */; };
+		E74179CF2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = E74179CD2627EF4B0000E876 /* UIBarButtonItem+Swizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E74179D02627EF4B0000E876 /* UIBarButtonItem+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179CE2627EF4B0000E876 /* UIBarButtonItem+Swizzle.m */; };
-		E7E235CD261BE0C800257BFA /* TestLaunchUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */; };
+		E7E235CD261BE0C800257BFA /* TestLaunchUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7E235CE261BE0C800257BFA /* TestLaunchUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */; };
 /* End PBXBuildFile section */
 

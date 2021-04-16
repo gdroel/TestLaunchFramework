@@ -10,7 +10,6 @@
 #import "TestLaunchExplorerViewController.h"
 #import "TestLaunchUtility.h"
 #import "UIView+Synthesis.h"
-//#import "TestLaunchFramework-Swift.h"
 
 @interface TestLaunchExplorerViewController ()
 
@@ -31,9 +30,12 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor clearColor];
+    
+    CGFloat recordButtonWidth = 40;
 
-    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake(10, 10, 100, 100)];
+    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - recordButtonWidth) / 2, 10, recordButtonWidth, recordButtonWidth)];
     _recordButton.backgroundColor = [UIColor greenColor];
+    [_recordButton setTitle:@"Record" forState:UIControlStateNormal];
     
     [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_recordButton];
