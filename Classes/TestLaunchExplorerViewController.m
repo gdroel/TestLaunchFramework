@@ -148,12 +148,18 @@
         NSLog(@"some sort of control");
         
         UIControl *control = (UIControl *)lastSubview;
-        NSArray<NSString *> *actions = [control actionsForTarget:control forControlEvent:UIControlEventAllEvents];
+        NSSet *targs = [control allTargets];
+        NSArray<NSString *> *actions = [control actionsForTarget:[targs anyObject] forControlEvent:UIControlEventTouchUpInside];
 
+        [control sendActionsForControlEvents:UIControlEventTouchUpInside];
 //        [[item target] performSelector:item.action];
     } else {
         [lastSubview simulateTap];
     }
+
+    /* Clear all the views */
+//    [self removeAndClearOutlineViews];
+
     
     /* We play a trick on the user here, they think they are the ones tapping the view but we programatically do it*/
 //    NSError *error;
@@ -197,7 +203,7 @@
     
     // Make sure the explorer toolbar doesn't end up behind the newly added outline views.
 //    [self.view bringSubviewToFront:self.explorerToolbar];
-//    
+//
 //    [self updateButtonStates];
 }
 
