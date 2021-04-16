@@ -22,6 +22,8 @@
 
 @property (nonatomic) UIView *selectedView;
 
+@property (nonatomic) NSMutableArray<NSValue *> *tapPoints;
+
 @end
 
 @implementation TestLaunchExplorerViewController
