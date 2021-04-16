@@ -97,6 +97,11 @@
         BOOL subviewContainsPoint = CGRectContainsPoint(subview.frame, pointInView);
         if (subviewContainsPoint) {
             [subviewsAtPoint addObject:subview];
+            
+            // We don't want to go any deeper, at least for recording
+            if ([subview isKindOfClass:[UIControl class]]) {
+                break;
+            }
         }
         
         // If this view doesn't clip to its bounds, we need to check its subviews even if it
