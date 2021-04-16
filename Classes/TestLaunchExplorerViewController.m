@@ -10,6 +10,7 @@
 #import "TestLaunchExplorerViewController.h"
 #import "TestLaunchUtility.h"
 #import "UIView+Synthesis.h"
+#import "TestLaunchTap.h"
 
 @interface TestLaunchExplorerViewController ()
 
@@ -22,7 +23,9 @@
 
 @property (nonatomic) UIView *selectedView;
 
-@property (nonatomic) NSMutableArray<NSValue *> *tapPoints;
+@property (nonatomic) NSMutableArray<TestLaunchTap *> *tlTaps;
+
+@property (nonatomic) BOOL runningTest;
 
 @end
 
@@ -46,6 +49,8 @@
     UITapGestureRecognizer *selectionTapGR = [[UITapGestureRecognizer alloc]
         initWithTarget:self action:@selector(handleSelectionTap:)
     ];
+    
+    _runningTest = NO;
     
     [self.view addGestureRecognizer:selectionTapGR];
 }
@@ -163,7 +168,11 @@
     } else {
         [lastSubview simulateTap];
     }
-
+    
+    if (_runningTest) {
+        TestLaunchTap *tlTap = [[TestLaunchTap alloc] initWithTapPoint:tapPointInWindow];
+        [_tlTaps addObject:tlTap];
+    }
     /* Clear all the views */
 //    [self removeAndClearOutlineViews];
 
@@ -174,6 +183,17 @@
     
     // Select the deepest visible view at the tap point. This generally corresponds to what the user wants to select.
     return lastSubview;
+}
+
+- (void)runTest {
+    UIWindow *windowForSelection = UIApplication.sharedApplication.keyWindow;
+    _runningTest = YES;
+    for (TestLaunchTap *tlTap in _tlTaps) {
+        [self updateOutlineViewsForSelectionPoint:tlTap.tapPoint];
+
+        sleep(1.0);
+    }
+    _runningTest = NO;
 }
 
 - (void)handleSelectionTap:(UITapGestureRecognizer *)tapGR {
