@@ -146,8 +146,11 @@
     
     if ([[lastSubview class] isSubclassOfClass:[UIControl class]]) {
         NSLog(@"some sort of control");
-        UIBarButtonItem *item = (UIBarButtonItem *)lastSubview;
-        [[item target] performSelector:item.action];
+        
+        UIControl *control = (UIControl *)lastSubview;
+        NSArray<NSString *> *actions = [control actionsForTarget:control forControlEvent:UIControlEventAllEvents];
+
+//        [[item target] performSelector:item.action];
     } else {
         [lastSubview simulateTap];
     }
