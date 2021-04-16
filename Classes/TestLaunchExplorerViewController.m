@@ -31,9 +31,10 @@
     
     self.view.backgroundColor = [UIColor clearColor];
     
-    CGFloat recordButtonWidth = 40;
+    CGFloat recordButtonWidth = 80;
+    CGFloat recordButtonHeight = 20;
 
-    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - recordButtonWidth) / 2, 10, recordButtonWidth, recordButtonWidth)];
+    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - recordButtonWidth) / 2, 30, recordButtonWidth, recordButtonHeight)];
     _recordButton.backgroundColor = [UIColor greenColor];
     [_recordButton setTitle:@"Record" forState:UIControlStateNormal];
     
@@ -143,8 +144,8 @@
     NSLog(@"TestLaunchFramework: Selected view class is %@", [lastSubview class]);
     NSLog(@"TestLaunchFramework: Selected view is %@", lastSubview.debugDescription);
     
-    if ([[lastSubview class] isSubclassOfClass:[UIBarItem class]]) {
-        NSLog(@"is a bar button item");
+    if ([[lastSubview class] isSubclassOfClass:[UIControl class]]) {
+        NSLog(@"some sort of control");
         UIBarButtonItem *item = (UIBarButtonItem *)lastSubview;
         [[item target] performSelector:item.action];
     } else {
