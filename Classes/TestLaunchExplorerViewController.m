@@ -16,6 +16,8 @@
 
 @property (nonatomic) UIButton *recordButton;
 
+@property (nonatomic) UIButton *runTestsButton;
+
 /// The actual views at the selection point with the deepest view last.
 @property (nonatomic) NSArray<UIView *> *viewsAtTapPoint;
 
@@ -36,14 +38,27 @@
     
     self.view.backgroundColor = [UIColor clearColor];
     
-    CGFloat recordButtonWidth = 80;
-    CGFloat recordButtonHeight = 20;
+    CGFloat initialY = 30;
+    CGFloat buttonHeight = 40;
+    CGFloat padding = 10;
+    CGFloat buttonWidth = buttonHeight;
+    UIColor *buttonColor = [UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.47];
 
-    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - recordButtonWidth) / 2, 30, recordButtonWidth, recordButtonHeight)];
-    _recordButton.backgroundColor = [UIColor greenColor];
+    // Set up record button
+    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
+    _recordButton.backgroundColor = buttonColor;
+    [_recordButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
     [_recordButton setTitle:@"Record" forState:UIControlStateNormal];
+    [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    [_recordButton addTarget:self action:@selector(runTest) forControlEvents:UIControlEventTouchUpInside];
+    // Set up run tests button
+    _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) + padding, initialY, buttonWidth, buttonHeight)];
+    _runTestsButton.backgroundColor = buttonColor;
+    [_runTestsButton setImage:[UIImage imageNamed:@"RunTestsIcon"] forState:UIControlStateNormal];
+    [_runTestsButton setTitle:@"Record" forState:UIControlStateNormal];
+    [_runTestsButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     [self.view addSubview:_recordButton];
     
     UITapGestureRecognizer *selectionTapGR = [[UITapGestureRecognizer alloc]

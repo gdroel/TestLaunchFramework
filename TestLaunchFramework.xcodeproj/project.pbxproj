@@ -43,6 +43,7 @@
 		E74179D02627EF4B0000E876 /* UIBarButtonItem+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = E74179CE2627EF4B0000E876 /* UIBarButtonItem+Swizzle.m */; };
 		E7560449262A58CF00A8F640 /* TestLaunchTap.h in Headers */ = {isa = PBXBuildFile; fileRef = E7560447262A58CF00A8F640 /* TestLaunchTap.h */; };
 		E756044A262A58CF00A8F640 /* TestLaunchTap.m in Sources */ = {isa = PBXBuildFile; fileRef = E7560448262A58CF00A8F640 /* TestLaunchTap.m */; };
+		E7560466262A643800A8F640 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7560465262A643800A8F640 /* Media.xcassets */; };
 		E7E235CD261BE0C800257BFA /* TestLaunchUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E7E235CE261BE0C800257BFA /* TestLaunchUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */; };
 /* End PBXBuildFile section */
@@ -139,6 +140,7 @@
 		E74179CE2627EF4B0000E876 /* UIBarButtonItem+Swizzle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Swizzle.m"; sourceTree = "<group>"; };
 		E7560447262A58CF00A8F640 /* TestLaunchTap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchTap.h; sourceTree = "<group>"; };
 		E7560448262A58CF00A8F640 /* TestLaunchTap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchTap.m; sourceTree = "<group>"; };
+		E7560465262A643800A8F640 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		E7E235CB261BE0C800257BFA /* TestLaunchUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLaunchUtility.h; sourceTree = "<group>"; };
 		E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLaunchUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 				E7E235CC261BE0C800257BFA /* TestLaunchUtility.m */,
 				E7560447262A58CF00A8F640 /* TestLaunchTap.h */,
 				E7560448262A58CF00A8F640 /* TestLaunchTap.m */,
+				E7560465262A643800A8F640 /* Media.xcassets */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7560466262A643800A8F640 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
