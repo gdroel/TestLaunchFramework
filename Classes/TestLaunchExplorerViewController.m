@@ -264,6 +264,12 @@
         return;
     }
     
+    if (CGRectContainsPoint(_runTestsButton.frame, point)) {//change it to your condition
+        NSLog(@"Tapping on record button");
+        [self runTests:_runTestsButton];
+        return;
+    }
+    
     if (YES == _isRecording && tapGR.state == UIGestureRecognizerStateRecognized) {
         // Note that [tapGR locationInView:nil] is broken in iOS 8,
         // so we have to do a two step conversion to window coordinates.
