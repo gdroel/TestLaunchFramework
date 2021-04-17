@@ -87,6 +87,9 @@
         [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
         [self removeAndClearOutlineViews];
         _isRecording = NO;
+        
+        // Clear the taps array
+        _tlTaps = [[NSMutableArray alloc] init];
     }
 }
 
