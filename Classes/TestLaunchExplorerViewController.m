@@ -43,7 +43,7 @@
     _recordButton.backgroundColor = [UIColor greenColor];
     [_recordButton setTitle:@"Record" forState:UIControlStateNormal];
     
-    [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [_recordButton addTarget:self action:@selector(runTest) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_recordButton];
     
     UITapGestureRecognizer *selectionTapGR = [[UITapGestureRecognizer alloc]
@@ -186,6 +186,7 @@
 }
 
 - (void)runTest {
+    NSLog(@"Trying to run test.");
     UIWindow *windowForSelection = UIApplication.sharedApplication.keyWindow;
     _runningTest = YES;
     for (TestLaunchTap *tlTap in _tlTaps) {
