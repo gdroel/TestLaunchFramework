@@ -108,9 +108,9 @@
         i++;
 //    }
     }
-    
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC * [_tlTaps count])), dispatch_get_main_queue(), ^ {
-        _runningTest = NO;
+        [self setRunningTest: NO];
         [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
     });
     
@@ -128,6 +128,11 @@
     
     // Always handle record events
     if (CGRectContainsPoint(self.recordButton.frame, pointInLocalCoordinates)) {
+        shouldReceiveTouch = YES;
+    }
+
+    // Always handle record events
+    if (CGRectContainsPoint(self.runTestsButton.frame, pointInLocalCoordinates)) {
         shouldReceiveTouch = YES;
     }
     
