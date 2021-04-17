@@ -82,7 +82,7 @@
         [sender setBackgroundColor:[UIColor redColor]];
         _isRecording = YES;
     } else {
-        [sender setBackgroundColor:[UIColor redColor]];
+        [sender setBackgroundColor:[UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.1]];
         _isRecording = NO;
     }
 }
@@ -91,8 +91,24 @@
 
 - (BOOL)shouldReceiveTouchAtWindowPoint:(CGPoint)pointInWindowCoordinates {
     
-    return TL_ENABLED;
+//    return TL_ENABLED;
     
+    BOOL shouldReceiveTouch = NO;
+    
+    CGPoint pointInLocalCoordinates = [self.view convertPoint:pointInWindowCoordinates fromView:nil];
+    
+    // Always handle record events
+    if (CGRectContainsPoint(self.recordButton.frame, pointInLocalCoordinates)) {
+        shouldReceiveTouch = YES;
+    }
+    
+    // If we are recording then always handle touch
+    if (YES == _isRecording) {
+        shouldReceiveTouch = YES;
+    }
+    
+    return shouldReceiveTouch;
+
 //    BOOL shouldReceiveTouch = NO;
 //
 //    CGPoint pointInLocalCoordinates = [self.view convertPoint:pointInWindowCoordinates fromView:nil];
@@ -226,9 +242,10 @@
 }
 
 - (void)handleSelectionTap:(UITapGestureRecognizer *)tapGR {
+    NSLog(@"attempting to handle tap");
     // Only if we're in selection mode
     // if (self.currentMode == FLEXExplorerModeSelect && tapGR.state == UIGestureRecognizerStateRecognized) {
-    if (_isRecording == YES && tapGR.state == UIGestureRecognizerStateRecognized) {
+    if (YES == _isRecording && tapGR.state == UIGestureRecognizerStateRecognized) {
         // Note that [tapGR locationInView:nil] is broken in iOS 8,
         // so we have to do a two step conversion to window coordinates.
         // Thanks to @lascorbe for finding this: https://github.com/Flipboard/FLEX/pull/31
