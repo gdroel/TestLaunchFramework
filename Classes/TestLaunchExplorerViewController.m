@@ -48,7 +48,7 @@
 
     // Set up record button
     _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
-    _recordButton.backgroundColor = buttonColor;
+    [_recordButton setBackgroundColor:buttonColor];
     [_recordButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
     [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     [[_recordButton layer] setCornerRadius:buttonHeight/2];
@@ -56,9 +56,9 @@
     
     // Set up run tests button
     _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) + padding, initialY, buttonWidth, buttonHeight)];
-    _runTestsButton.backgroundColor = buttonColor;
+    [_runTestsButton setBackgroundColor:buttonColor];
     [_runTestsButton setImage:[UIImage imageNamed:@"RunTestsIcon"] forState:UIControlStateNormal];
-    [_runTestsButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [_runTestsButton addTarget:self action:@selector(runTests:) forControlEvents:UIControlEventTouchUpInside];
     [[_runTestsButton layer] setCornerRadius:buttonHeight/2];
     [_runTestsButton setClipsToBounds:YES];
     
@@ -85,6 +85,7 @@
         _isRecording = YES;
     } else {
         [sender setBackgroundColor:[UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.1]];
+        [self removeAndClearOutlineViews];
         _isRecording = NO;
     }
 }
@@ -231,7 +232,7 @@
     return lastSubview;
 }
 
-- (void)runTest {
+- (void)runTests {
     NSLog(@"Trying to run test.");
     UIWindow *windowForSelection = UIApplication.sharedApplication.keyWindow;
     _runningTest = YES;
@@ -247,6 +248,14 @@
     NSLog(@"attempting to handle tap");
     // Only if we're in selection mode
     // if (self.currentMode == FLEXExplorerModeSelect && tapGR.state == UIGestureRecognizerStateRecognized) {
+    
+    CGPoint point = [tapGR locationInView:self.view];
+    if (CGRectContainsPoint(_recordButton.frame, point)) {//change it to your condition
+        NSLog(@"Tapping on record button");
+        [self recordButtonTapped: _recordButton];
+        return;
+    }
+    
     if (YES == _isRecording && tapGR.state == UIGestureRecognizerStateRecognized) {
         // Note that [tapGR locationInView:nil] is broken in iOS 8,
         // so we have to do a two step conversion to window coordinates.
@@ -260,11 +269,9 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
 
     // Disallow recognition of tap gestures in the segmented control.
-    if ((touch.view == _recordButton)) {//change it to your condition
-        return NO;
-    }
     return YES;
 }
+
 
 - (void)updateOutlineViewsForSelectionPoint:(CGPoint)selectionPointInWindow {
     [self removeAndClearOutlineViews];
