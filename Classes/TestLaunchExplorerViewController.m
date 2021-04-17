@@ -29,6 +29,8 @@
 
 @property (nonatomic) BOOL runningTest;
 
+@property (nonatomic) BOOL isRecording;
+
 @end
 
 @implementation TestLaunchExplorerViewController
@@ -38,25 +40,27 @@
     
     self.view.backgroundColor = [UIColor clearColor];
     
-    CGFloat initialY = 30;
+    CGFloat initialY = 40;
     CGFloat buttonHeight = 40;
-    CGFloat padding = 10;
+    CGFloat padding = 5;
     CGFloat buttonWidth = buttonHeight;
-    UIColor *buttonColor = [UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.2];
+    UIColor *buttonColor = [UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.1];
 
     // Set up record button
     _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
     _recordButton.backgroundColor = buttonColor;
     [_recordButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
-    [_recordButton setTitle:@"Record" forState:UIControlStateNormal];
     [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [[_recordButton layer] setCornerRadius:buttonHeight/2];
+    [_recordButton setClipsToBounds:YES];
     
     // Set up run tests button
     _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) + padding, initialY, buttonWidth, buttonHeight)];
     _runTestsButton.backgroundColor = buttonColor;
     [_runTestsButton setImage:[UIImage imageNamed:@"RunTestsIcon"] forState:UIControlStateNormal];
-    [_runTestsButton setTitle:@"Record" forState:UIControlStateNormal];
     [_runTestsButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [[_runTestsButton layer] setCornerRadius:buttonHeight/2];
+    [_runTestsButton setClipsToBounds:YES];
     
     [self.view addSubview:_recordButton];
     [self.view addSubview:_runTestsButton];
@@ -66,12 +70,21 @@
     ];
     
     _runningTest = NO;
+    _isRecording = NO;
     
     [self.view addGestureRecognizer:selectionTapGR];
 }
 
 - (void)recordButtonTapped:(UIButton*)sender {
     NSLog(@"record button tapped");
+    
+    if (NO == _isRecording) {
+        [sender setBackgroundColor:[UIColor redColor]];
+        _isRecording = YES;
+    } else {
+        [sender setBackgroundColor:[UIColor redColor]];
+        _isRecording = NO;
+    }
 }
 
 /* Handles touches */
@@ -215,7 +228,7 @@
 - (void)handleSelectionTap:(UITapGestureRecognizer *)tapGR {
     // Only if we're in selection mode
     // if (self.currentMode == FLEXExplorerModeSelect && tapGR.state == UIGestureRecognizerStateRecognized) {
-    if (tapGR.state == UIGestureRecognizerStateRecognized) {
+    if (_isRecording == YES && tapGR.state == UIGestureRecognizerStateRecognized) {
         // Note that [tapGR locationInView:nil] is broken in iOS 8,
         // so we have to do a two step conversion to window coordinates.
         // Thanks to @lascorbe for finding this: https://github.com/Flipboard/FLEX/pull/31
