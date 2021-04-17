@@ -42,7 +42,7 @@
     CGFloat buttonHeight = 40;
     CGFloat padding = 10;
     CGFloat buttonWidth = buttonHeight;
-    UIColor *buttonColor = [UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.47];
+    UIColor *buttonColor = [UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.8];
 
     // Set up record button
     _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
@@ -58,9 +58,9 @@
     [_runTestsButton setTitle:@"Record" forState:UIControlStateNormal];
     [_runTestsButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
     
-    
     [self.view addSubview:_recordButton];
-    
+    [self.view addSubview:_runTestsButton];
+
     UITapGestureRecognizer *selectionTapGR = [[UITapGestureRecognizer alloc]
         initWithTarget:self action:@selector(handleSelectionTap:)
     ];
