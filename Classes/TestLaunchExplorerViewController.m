@@ -83,6 +83,7 @@
     NSLog(@"record button tapped");
     
     if (NO == _isRecording) {
+        _tlTaps = [[NSMutableArray alloc] init];
         [sender setBackgroundColor:[UIColor redColor]];
         _isRecording = YES;
     } else {
@@ -91,7 +92,6 @@
         _isRecording = NO;
         
         // Clear the taps array
-        _tlTaps = [[NSMutableArray alloc] init];
     }
 }
 
@@ -132,7 +132,7 @@
     }
     
     // If we are recording then always handle touch
-    if (YES == _isRecording) {
+    if (YES == _isRecording || YES == _runningTest) {
         shouldReceiveTouch = YES;
     }
     
@@ -278,7 +278,7 @@
         return;
     }
     
-    if (YES == _isRecording && tapGR.state == UIGestureRecognizerStateRecognized) {
+    if ((YES == _isRecording || YES == _runningTest) && tapGR.state == UIGestureRecognizerStateRecognized) {
         // Note that [tapGR locationInView:nil] is broken in iOS 8,
         // so we have to do a two step conversion to window coordinates.
         // Thanks to @lascorbe for finding this: https://github.com/Flipboard/FLEX/pull/31
