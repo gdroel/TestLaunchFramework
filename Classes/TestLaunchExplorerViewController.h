@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TestLaunchExplorerViewController : UIViewController
+@interface TestLaunchExplorerViewController<UIGestureRecognizerDelegate> : UIViewController
 
 - (BOOL)shouldReceiveTouchAtWindowPoint:(CGPoint)pointInWindowCoordinates;
 

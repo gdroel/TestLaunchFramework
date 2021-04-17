@@ -69,6 +69,8 @@
         initWithTarget:self action:@selector(handleSelectionTap:)
     ];
     
+    [selectionTapGR setDelegate:self];
+    
     _runningTest = NO;
     _isRecording = NO;
     
@@ -253,6 +255,15 @@
         CGPoint tapPointInWindow = [self.view convertPoint:tapPointInView toView:nil];
         [self updateOutlineViewsForSelectionPoint:tapPointInWindow];
     }
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+
+    // Disallow recognition of tap gestures in the segmented control.
+    if ((touch.view == _recordButton)) {//change it to your condition
+        return NO;
+    }
+    return YES;
 }
 
 - (void)updateOutlineViewsForSelectionPoint:(CGPoint)selectionPointInWindow {
