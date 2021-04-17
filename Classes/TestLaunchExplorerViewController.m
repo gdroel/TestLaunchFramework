@@ -101,9 +101,9 @@
     
     for (TestLaunchTap *tlTap in _tlTaps) {
         [self updateOutlineViewsForSelectionPoint:tlTap.tapPoint];
-
-        sleep(1.0);
+        [NSThread sleepForTimeInterval:1.0];
     }
+    
     _runningTest = NO;
     [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
 }
@@ -265,7 +265,7 @@
     }
     
     if (CGRectContainsPoint(_runTestsButton.frame, point)) {//change it to your condition
-        NSLog(@"Tapping on record button");
+        NSLog(@"Tapping on run tests button");
         [self runTests:_runTestsButton];
         return;
     }
