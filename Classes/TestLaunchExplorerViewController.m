@@ -42,7 +42,7 @@
     CGFloat buttonHeight = 40;
     CGFloat padding = 10;
     CGFloat buttonWidth = buttonHeight;
-    UIColor *buttonColor = [UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.8];
+    UIColor *buttonColor = [UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.2];
 
     // Set up record button
     _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
