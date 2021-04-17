@@ -44,7 +44,7 @@
     CGFloat buttonHeight = 40;
     CGFloat padding = 5;
     CGFloat buttonWidth = buttonHeight;
-    UIColor *buttonColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.8];
+    UIColor *buttonColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6];
 
     // Set up record button
     _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
@@ -84,10 +84,25 @@
         [sender setBackgroundColor:[UIColor redColor]];
         _isRecording = YES;
     } else {
-        [sender setBackgroundColor:[UIColor colorWithRed: 1.00 green: 1.00 blue: 1.00 alpha: 0.1]];
+        [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
         [self removeAndClearOutlineViews];
         _isRecording = NO;
     }
+}
+
+- (void)runTests:(UIButton*)sender {
+    NSLog(@"Trying to run test.");
+    [sender setBackgroundColor:[UIColor greenColor]];
+    UIWindow *windowForSelection = UIApplication.sharedApplication.keyWindow;
+    _runningTest = YES;
+    
+    for (TestLaunchTap *tlTap in _tlTaps) {
+        [self updateOutlineViewsForSelectionPoint:tlTap.tapPoint];
+
+        sleep(1.0);
+    }
+    _runningTest = NO;
+    [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
 }
 
 /* Handles touches */
@@ -216,7 +231,7 @@
         [lastSubview simulateTap];
     }
     
-    if (_runningTest) {
+    if (!_runningTest) {
         TestLaunchTap *tlTap = [[TestLaunchTap alloc] initWithTapPoint:tapPointInWindow];
         [_tlTaps addObject:tlTap];
     }
@@ -232,17 +247,7 @@
     return lastSubview;
 }
 
-- (void)runTests {
-    NSLog(@"Trying to run test.");
-    UIWindow *windowForSelection = UIApplication.sharedApplication.keyWindow;
-    _runningTest = YES;
-    for (TestLaunchTap *tlTap in _tlTaps) {
-        [self updateOutlineViewsForSelectionPoint:tlTap.tapPoint];
 
-        sleep(1.0);
-    }
-    _runningTest = NO;
-}
 
 - (void)handleSelectionTap:(UITapGestureRecognizer *)tapGR {
     NSLog(@"attempting to handle tap");
