@@ -71,6 +71,8 @@
     
     [selectionTapGR setDelegate:self];
     
+    _tlTaps = [[NSMutableArray alloc] init];
+    
     _runningTest = NO;
     _isRecording = NO;
     
@@ -96,16 +98,22 @@
 - (void)runTests:(UIButton*)sender {
     NSLog(@"Trying to run test.");
     [sender setBackgroundColor:[UIColor greenColor]];
-    UIWindow *windowForSelection = UIApplication.sharedApplication.keyWindow;
     _runningTest = YES;
     
+    NSInteger i = 0;
     for (TestLaunchTap *tlTap in _tlTaps) {
-        [self updateOutlineViewsForSelectionPoint:tlTap.tapPoint];
-        [NSThread sleepForTimeInterval:1.0];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC * i)), dispatch_get_main_queue(), ^ {
+            [self updateOutlineViewsForSelectionPoint:tlTap.tapPoint];
+        });
+        i++;
+//    }
     }
     
-    _runningTest = NO;
-    [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC * [_tlTaps count])), dispatch_get_main_queue(), ^ {
+        _runningTest = NO;
+        [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
+    });
+    
 }
 
 /* Handles touches */
@@ -266,7 +274,7 @@
     
     if (CGRectContainsPoint(_runTestsButton.frame, point)) {//change it to your condition
         NSLog(@"Tapping on run tests button");
-        [self runTests:_runTestsButton];
+        [self runTests: _runTestsButton];
         return;
     }
     
