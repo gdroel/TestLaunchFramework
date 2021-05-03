@@ -18,6 +18,8 @@
 
 @property (nonatomic) UIButton *runTestsButton;
 
+@property (nonatomic) UIButton *checkpointButton;
+
 /// The actual views at the selection point with the deepest view last.
 @property (nonatomic) NSArray<UIView *> *viewsAtTapPoint;
 
@@ -54,8 +56,16 @@
     [[_recordButton layer] setCornerRadius:buttonHeight/2];
     [_recordButton setClipsToBounds:YES];
     
+    // Set up checkpoint button
+    _checkpointButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - buttonWidth/ 2), initialY, buttonWidth, buttonHeight)];
+    [_checkpointButton setBackgroundColor:buttonColor];
+    [_checkpointButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
+    [_checkpointButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [[_checkpointButton layer] setCornerRadius:buttonHeight/2];
+    [_checkpointButton setClipsToBounds:YES];
+
     // Set up run tests button
-    _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) + padding, initialY, buttonWidth, buttonHeight)];
+    _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width + buttonWidth / 2) + padding, initialY, buttonWidth, buttonHeight)];
     [_runTestsButton setBackgroundColor:buttonColor];
     [_runTestsButton setImage:[UIImage imageNamed:@"RunTestsIcon"] forState:UIControlStateNormal];
     [_runTestsButton addTarget:self action:@selector(runTests:) forControlEvents:UIControlEventTouchUpInside];
