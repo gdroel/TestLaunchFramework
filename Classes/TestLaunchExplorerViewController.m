@@ -33,6 +33,8 @@
 
 @property (nonatomic) BOOL isRecording;
 
+@property (nonatomic) BOOL creatingCheckpoint;
+
 @end
 
 @implementation TestLaunchExplorerViewController
@@ -41,40 +43,6 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor clearColor];
-    
-    CGFloat initialY = 40;
-    CGFloat buttonHeight = 40;
-    CGFloat padding = 5;
-    CGFloat buttonWidth = buttonHeight;
-    UIColor *buttonColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6];
-
-    // Set up record button
-    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - buttonWidth / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
-    [_recordButton setBackgroundColor:buttonColor];
-    [_recordButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
-    [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [[_recordButton layer] setCornerRadius:buttonHeight/2];
-    [_recordButton setClipsToBounds:YES];
-    
-    // Set up checkpoint button
-    _checkpointButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - buttonWidth / 2), initialY, buttonWidth, buttonHeight)];
-    [_checkpointButton setBackgroundColor:buttonColor];
-    [_checkpointButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
-    [_checkpointButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [[_checkpointButton layer] setCornerRadius:buttonHeight/2];
-    [_checkpointButton setClipsToBounds:YES];
-
-    // Set up run tests button
-    _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width + buttonWidth / 2) + buttonWidth + padding, initialY, buttonWidth, buttonHeight)];
-    [_runTestsButton setBackgroundColor:buttonColor];
-    [_runTestsButton setImage:[UIImage imageNamed:@"RunTestsIcon"] forState:UIControlStateNormal];
-    [_runTestsButton addTarget:self action:@selector(runTests:) forControlEvents:UIControlEventTouchUpInside];
-    [[_runTestsButton layer] setCornerRadius:buttonHeight/2];
-    [_runTestsButton setClipsToBounds:YES];
-    
-    [self.view addSubview:_recordButton];
-    [self.view addSubview:_runTestsButton];
-    [self.view addSubview:_checkpointButton];
 
     UITapGestureRecognizer *selectionTapGR = [[UITapGestureRecognizer alloc]
         initWithTarget:self action:@selector(handleSelectionTap:)
@@ -88,6 +56,74 @@
     _isRecording = NO;
     
     [self.view addGestureRecognizer:selectionTapGR];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    CGFloat initialY = 40;
+    CGFloat buttonHeight = 40;
+    CGFloat padding = 5;
+    CGFloat buttonWidth = buttonHeight;
+    UIColor *buttonColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6];
+
+    // Set up record button
+    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake(((self.view.frame.size.width - buttonWidth) / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
+    [_recordButton setBackgroundColor:buttonColor];
+    [_recordButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
+    [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [[_recordButton layer] setCornerRadius:buttonHeight/2];
+    [_recordButton setClipsToBounds:YES];
+    
+    // Set up checkpoint button
+    _checkpointButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - buttonWidth) / 2, initialY, buttonWidth, buttonHeight)];
+    [_checkpointButton setBackgroundColor:buttonColor];
+    [_checkpointButton setImage:[UIImage imageNamed:@"FlagIcon"] forState:UIControlStateNormal];
+    [_checkpointButton addTarget:self action:@selector(checkpointButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [[_checkpointButton layer] setCornerRadius:buttonHeight/2];
+    [_checkpointButton setClipsToBounds:YES];
+    
+    // Set up run tests button
+    _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake(((self.view.frame.size.width + buttonWidth) / 2) + padding, initialY, buttonWidth, buttonHeight)];
+    [_runTestsButton setBackgroundColor:buttonColor];
+    [_runTestsButton setImage:[UIImage imageNamed:@"RunTestsIcon"] forState:UIControlStateNormal];
+    [_runTestsButton addTarget:self action:@selector(runTests:) forControlEvents:UIControlEventTouchUpInside];
+    [[_runTestsButton layer] setCornerRadius:buttonHeight/2];
+    [_runTestsButton setClipsToBounds:YES];
+    
+    [self.view addSubview:_recordButton];
+    [self.view addSubview:_runTestsButton];
+    [self.view addSubview:_checkpointButton];
+}
+
+- (void)checkpointButtonTapped:(UIButton*)sender {
+    NSLog(@"checkpointButtonTapped");
+    
+    if (NO == _creatingCheckpoint) {
+        [sender setBackgroundColor:[UIColor cyanColor]];
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Create Checkpoint" message:@"Enter what this button text should always equal" preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            NSLog(@"alert text field");
+        }];
+        
+        UIAlertAction* yesButton = [UIAlertAction
+                                    actionWithTitle:@"Create"
+                                    style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * action) {
+                                        //Handle your yes please button action here
+            NSLog(@"create tapped");
+                                    }];
+        
+        [alertController addAction:yesButton];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+        _creatingCheckpoint = YES;
+    } else {
+        [sender setBackgroundColor:[UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6]];
+        _creatingCheckpoint = NO;
+        
+        // Clear the taps array
+    }
 }
 
 - (void)recordButtonTapped:(UIButton*)sender {
@@ -146,6 +182,12 @@
     if (CGRectContainsPoint(self.runTestsButton.frame, pointInLocalCoordinates)) {
         shouldReceiveTouch = YES;
     }
+    
+    // Always checkpoint creation events
+    if (CGRectContainsPoint(self.checkpointButton.frame, pointInLocalCoordinates)) {
+        shouldReceiveTouch = YES;
+    }
+    
     
     // If we are recording then always handle touch
     if (YES == _isRecording || YES == _runningTest) {
