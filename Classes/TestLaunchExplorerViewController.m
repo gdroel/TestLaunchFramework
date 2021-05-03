@@ -49,7 +49,7 @@
     UIColor *buttonColor = [UIColor colorWithRed: 0.0 green: 0.0 blue: 0.0 alpha: 0.6];
 
     // Set up record button
-    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
+    _recordButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - buttonWidth / 2) - buttonWidth - padding, initialY, buttonWidth, buttonHeight)];
     [_recordButton setBackgroundColor:buttonColor];
     [_recordButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
     [_recordButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -57,7 +57,7 @@
     [_recordButton setClipsToBounds:YES];
     
     // Set up checkpoint button
-    _checkpointButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - buttonWidth/ 2), initialY, buttonWidth, buttonHeight)];
+    _checkpointButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - buttonWidth / 2), initialY, buttonWidth, buttonHeight)];
     [_checkpointButton setBackgroundColor:buttonColor];
     [_checkpointButton setImage:[UIImage imageNamed:@"RecordIcon"] forState:UIControlStateNormal];
     [_checkpointButton addTarget:self action:@selector(recordButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
@@ -65,7 +65,7 @@
     [_checkpointButton setClipsToBounds:YES];
 
     // Set up run tests button
-    _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width + buttonWidth / 2) + padding, initialY, buttonWidth, buttonHeight)];
+    _runTestsButton = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width + buttonWidth / 2) + buttonWidth + padding, initialY, buttonWidth, buttonHeight)];
     [_runTestsButton setBackgroundColor:buttonColor];
     [_runTestsButton setImage:[UIImage imageNamed:@"RunTestsIcon"] forState:UIControlStateNormal];
     [_runTestsButton addTarget:self action:@selector(runTests:) forControlEvents:UIControlEventTouchUpInside];
@@ -74,6 +74,7 @@
     
     [self.view addSubview:_recordButton];
     [self.view addSubview:_runTestsButton];
+    [self.view addSubview:_checkpointButton];
 
     UITapGestureRecognizer *selectionTapGR = [[UITapGestureRecognizer alloc]
         initWithTarget:self action:@selector(handleSelectionTap:)
